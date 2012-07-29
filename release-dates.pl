@@ -4,7 +4,7 @@ use Net::IRC::Bot;
 
 sub parrot-release-after(Date $date is copy = Date.today) {
     $date++ until $date.day-of-week == 2;
-    $date += 7 until ($date  - $date.truncated-to(:month)) div 7 == 2;
+    $date += 7 until ($date.day-of-month - 1) div 7 == 2;
     $date;
 }
 
