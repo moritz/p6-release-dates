@@ -47,6 +47,9 @@ class ReleaseDates {
             die "Internal error: can't match {$e.what}";
         }
     }
+    multi method said($e where { $e.what ~~ /^ $nick ':' \s* source / }) {
+        $e.msg: 'https://github.com/moritz/p6-release-dates/'
+    }
 
 }
 
